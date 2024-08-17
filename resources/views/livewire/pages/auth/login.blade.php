@@ -19,8 +19,21 @@ new #[Layout('layouts.guest')] class extends Component
         $this->form->authenticate();
 
         Session::regenerate();
+        // Mengakses pengguna yang saat ini terautentikasi
+        $user = auth()->user();
+        $url =  '';
 
-        $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+        if ($user->role === 'admin') {
+            $url = '/admin/dashboard';
+        } elseif ($user->role === 'user') {
+            $url = '/home';
+        } else {
+            $url = '/'; // URL default jika tidak ada role yang sesuai
+        }
+        
+        $this->redirectIntended($url);
+
+        // $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
     }
 }; ?>
 
