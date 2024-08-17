@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('alamat')->nullable(); // Alamat
             $table->string('jenis_kelamin', 10)->nullable(); // Jenis Kelamin (Pria/Wanita)
             $table->string('nomor_hp', 15)->nullable(); // Nomor HP
-            $table->enum('role', ['user' , 'admin'])->default('user');
+            $table->enum('role', ['user', 'admin'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
