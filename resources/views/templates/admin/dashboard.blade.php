@@ -1,4 +1,4 @@
-@extends('templates.admin.layouts.app')
+@extends($template)
 
 @section('content')
 <h1>Ini Dashboard Admin</h1>
