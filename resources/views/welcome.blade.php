@@ -1,6 +1,4 @@
-@extends($template)
-
-@section('content')
-<h1>Welcome</h1>
-@endsection
+<x-app-layout-app>
+    <h1>Welcome</h1>
+</x-app-layout-app>
 

@@ -10,6 +10,6 @@
     <p><strong>Harga:</strong> {{ $barang->harga }}</p>
     <p><strong>Stok:</strong> {{ $barang->stok }}</p>
     <p><strong>Kategori ID:</strong> {{ $barang->kategori->nama_kategori }}</p>
-    <a href="{{ route('barang.index') }}">Kembali ke Daftar Barang</a>
+    <a href="{{ route('user.home') }}">Kembali</a>
 
 @endsection
