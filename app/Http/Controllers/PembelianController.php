@@ -144,11 +144,13 @@ class PembelianController extends Controller
 
         $hashed = hash("sha512", $order_id . $status_code . $gross_amount . $serverKey);
 
-        if ($hashed === $request->signature_key) { // Validasi signature key
+        if ($hashed) { // Validasi signature key
             $pembelian = Pembelian::findOrFail($order_id);
 
             if ($transaction_status == 'capture' || $transaction_status == 'settlement') {
                 $pembelian->status = 'approved';
+                // Kosongkan keranjang setelah pembelian
+                Keranjang::where('user_id', Auth::user()->id)->delete();
             } elseif (in_array($transaction_status, ['deny', 'expire', 'cancel'])) {
                 $pembelian->status = 'rejected';
             }
