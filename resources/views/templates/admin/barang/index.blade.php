@@ -1,13 +1,17 @@
 @extends($template)
 
 @section('content')
-            <div class="container-fluid d-flex justify-content-center align-items-center">
-                <div class="row w-100">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <div class="row w-100">
+            <div
+                style="background-image: url('{{ asset('assets/img/back-again.png') }}'); background-size: 38%; background-repeat: no-repeat; background-position: 0px -120px; ">
+                <div
+                    style="background-image: url('{{ asset('assets/img/back-again.png') }}'); background-size: 38%; background-repeat: no-repeat; background-position: 100% 300px; ">
                     <div class="col-md-12 py-5 px-5 rounded shadow">
                         <h1 class="mb-4 text-center">Daftar Barang</h1>
                         <a href="{{ route('barang.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah
                             Barang</a>
-                        <div class="table-responsive">
+                        <div class="table-responsive text-center">
                             <table class="table table-bordered table-hover align-middle">
                                 <thead class="table-dark">
                                     <tr>
