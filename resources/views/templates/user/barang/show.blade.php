@@ -17,7 +17,7 @@
                 <p>{{ $barang->rincian_barang }}</p>
                 <p class="text-muted">Kategori: <span class="text-dark">{{ $barang->kategori->nama_kategori }}</span></p>
 
-                <a href="{{ route('keranjang.create', $barang->id_barang) }}" class="btn btn-primary btn-lg mt-3 btn-sm"
+                <a href="{{ route('keranjang.create', $barang->id_barang) }}" onclick="alert('Barang berhasil ditambahkan')" class="btn btn-primary btn-lg mt-3 btn-sm"
                     style="background: linear-gradient(135deg, #6a11cb, #2575fc);">
                     <i class="fas fa-shopping-cart"></i> Tambahkan ke Keranjang
                 </a>

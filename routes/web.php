@@ -27,6 +27,8 @@ Route::middleware('auth')->group(function () {
 
         // pembelian
         Route::post('/pembelian/store', [PembelianController::class, 'store'])->name('pembelian.store');
+        Route::get('/pembelian/show/{id_beli}', [PembelianController::class, 'show'])->name('pembelian.show');
+        Route::get('/pembelian/user', [PembelianController::class, 'indexUser'])->name('pembelian.user.index');
         Route::get('/payment/{pembelianId}', [PembelianController::class, 'paymentIndex'])->name('payment.index');
         Route::post('/payment/callback', [PembelianController::class, 'callback'])->name('payment.callback');
 
@@ -35,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware(['role:admin'])->group(function () {
         Route::get('/admin/dashboard', [HomeController::class, 'adminDashboard'])->name('admin.dashboard');
         Route::resource('barang', BarangController::class)->except('show');
+        Route::get('admin/pembelian', [PembelianController::class, 'index'])->name('admin.pembelian.index');
         Route::resource('kategori', KategoriController::class);
     });
 });

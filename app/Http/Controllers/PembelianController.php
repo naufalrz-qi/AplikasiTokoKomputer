@@ -20,7 +20,17 @@ class PembelianController extends Controller
      */
     public function index()
     {
+        $pembelians = Pembelian::with('user', 'details.barang')->get(); // Fetch all purchases with related data
+        return view('templates.admin.pembelian.index', compact('pembelians'));
+    }
 
+    public function indexUser()
+    {
+        $user = Auth::user();
+        $pembelians = Pembelian::with('details.barang')
+            ->where('user_id', $user->id)
+            ->get(); // Fetch purchases made by the logged-in user with related data
+        return view('templates.user.pembelian.index', compact('pembelians'));
     }
 
     /**
@@ -80,7 +90,14 @@ class PembelianController extends Controller
      */
     public function show(string $id_beli)
     {
+         // Fetch the pembelian record along with its details for the authenticated user
+            $pembelian = Pembelian::with(['user', 'details.barang'])
+            ->where('id_beli', $id_beli)
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
 
+        // Pass the data to the view
+        return view('templates.user.pembelian.show', compact('pembelian'));
     }
 
     /**

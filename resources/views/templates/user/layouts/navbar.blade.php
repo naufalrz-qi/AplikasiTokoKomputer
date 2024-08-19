@@ -15,6 +15,9 @@
                         <a class="nav-link" href="{{ route('keranjang.index') }}">Keranjang</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('pembelian.user.index') }}">Riwayat Pembelian</a>
+                    </li>
+                    <li class="nav-item">
                         @livewire('logout-button')
                     </li>
                 </ul>
