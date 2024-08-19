@@ -37,62 +37,68 @@ new #[Layout('templates.app.layouts.app')] class extends Component {
 
 <div>
 
-    <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center"
-        style="background-image: url('{{ asset('assets/img/back-login.png') }}'); background-size: 60%; background-repeat: no-repeat; background-position: center;">
+    <div>
+        <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center"
+            style="background-image: url('{{ asset('assets/img/back-again.png') }}'); background-size: 40%; background-repeat: no-repeat; background-position: -50%; ">
 
-        <div class="card shadow p-4" style="width: 100%; max-width: 500px; background-color: rgba(255, 255, 255, 1);">
-            <img src="{{ asset('assets/img/vector-login-3.png') }}" alt="Login Illustration"
-                class="img-fluid mx-auto d-block" style="max-width: 60%; height: auto;">
-            <div class="card-body">
-                <h4 class="card-title mb-4 text-center">Log in</h4>
+            <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center"
+                style="background-image: url('{{ asset('assets/img/back-again-2.png') }}'); background-size: 40%; background-repeat: no-repeat; background-position: 150%;">
 
-                <!-- Session Status -->
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
+                <div class="card shadow p-4"
+                    style="width: 100%; max-width: 450px; background-color: rgba(255, 255, 255, 1);">
+                    <img src="{{ asset('assets/img/vector-login-3.png') }}" alt="Login Illustration"
+                        class="img-fluid mx-auto d-block" style="max-width: 60%; height: auto;">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4 text-center">Log in</h4>
 
-                <form wire:submit.prevent="login">
-                    <!-- Email Address -->
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input wire:model="form.email" id="email" type="email" name="email" class="form-control"
-                            required autofocus autocomplete="username">
-                        @error('form.email')
-                            <div class="form-text text-danger">
-                                {{ $message }}
+                        <!-- Session Status -->
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
                             </div>
-                        @enderror
-                    </div>
+                        @endif
 
-                    <!-- Password -->
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input wire:model="form.password" id="password" type="password" name="password"
-                            class="form-control" required autocomplete="current-password">
-                        @error('form.password')
-                            <div class="form-text text-danger">
-                                {{ $message }}
+                        <form wire:submit.prevent="login">
+                            <!-- Email Address -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input wire:model="form.email" id="email" type="email" name="email"
+                                    class="form-control" required autofocus autocomplete="username">
+                                @error('form.email')
+                                    <div class="form-text text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        @enderror
-                    </div>
 
-                    <!-- Remember Me -->
-                    <div class="form-check mb-4">
-                        <input wire:model="form.remember" id="remember" type="checkbox" name="remember"
-                            class="form-check-input">
-                        <label for="remember" class="form-check-label">Remember me</label>
-                    </div>
+                            <!-- Password -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input wire:model="form.password" id="password" type="password" name="password"
+                                    class="form-control" required autocomplete="current-password">
+                                @error('form.password')
+                                    <div class="form-text text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
 
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-info">Log in</button>
+                            <!-- Remember Me -->
+                            <div class="form-check mb-4">
+                                <input wire:model="form.remember" id="remember" type="checkbox" name="remember"
+                                    class="form-check-input">
+                                <label for="remember" class="form-check-label">Remember me</label>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn text-white"
+                                    style="background: linear-gradient(135deg, #6a11cb, #2575fc);">Log in</button>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
+
+
+
         </div>
-    </div>
-
-
-
-</div>

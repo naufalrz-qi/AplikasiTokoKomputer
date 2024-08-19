@@ -1,60 +1,75 @@
 @extends($template)
 
 @section('content')
-    <div class="container py-5">
-        <h1 class="mb-4">Checkout</h1>
+    <div>
+        <h1 class="mt-4 text-center">Checkout</h1>
+        <div
+            style="background-image: url('{{ asset('assets/img/back-again.png') }}'); background-size: 38%; background-repeat: no-repeat; background-position: -50%; ">
+            <div
+                style="background-image: url('{{ asset('assets/img/back-again-2.png') }}'); background-size: 39%; background-repeat: no-repeat; background-position: 150%;">
 
-        @if (session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
-        @endif
+                <div class="container py-5">
 
-        @if ($keranjangItems->isEmpty())
-            <div class="alert alert-info">Keranjang kamu kosong.</div>
-        @else
-            <form action="{{ route('pembelian.store') }}" method="POST">
-                @csrf
-                <div class="table-responsive mb-4">
-                    <table class="table table-hover table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Produk</th>
-                                <th>Harga</th>
-                                <th>Jumlah</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($keranjangItems as $item)
-                                <tr>
-                                    <td class="d-flex align-items-center">
-                                        <img src="{{ asset($item->barang->gambar) }}" alt="{{ $item->barang->nama_barang }}"
-                                            class="img-thumbnail me-3" style="width: 50px; height: 50px;">
-                                        <strong>{{ $item->barang->nama_barang }}</strong>
-                                    </td>
-                                    <td>Rp {{ number_format($item->barang->harga, 2, ',', '.') }}</td>
-                                    <td>{{ $item->jumlah }}</td>
-                                    <td>Rp {{ number_format($item->barang->harga * $item->jumlah, 2, ',', '.') }}</td>
-                                    <input type="hidden" name="barang_id[]" value="{{ $item->id_barang }}">
-                                    <input type="hidden" name="jumlah[]" value="{{ $item->jumlah }}">
-                                </tr>
-                            @endforeach
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th colspan="3" class="text-end">Total Keseluruhan:</th>
-                                <th>Rp
-                                    {{ number_format($keranjangItems->sum(function ($item) {return $item->barang->harga * $item->jumlah;}),2,',','.') }}
-                                </th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                    @if (session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                    @endif
+
+                    @if ($keranjangItems->isEmpty())
+                        <div class="alert alert-info">Keranjang kamu kosong.</div>
+                    @else
+                        <form action="{{ route('pembelian.store') }}" method="POST">
+                            @csrf
+                            <div class="table-responsive mb-4">
+                                <table class="table table-hover table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Produk</th>
+                                            <th>Harga</th>
+                                            <th>Jumlah</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($keranjangItems as $item)
+                                            <tr>
+                                                <td class="d-flex align-items-center">
+                                                    <img src="{{ asset($item->barang->gambar) }}"
+                                                        alt="{{ $item->barang->nama_barang }}" class="img-thumbnail me-3"
+                                                        style="width: 50px; height: 50px;">
+                                                    <strong>{{ $item->barang->nama_barang }}</strong>
+                                                </td>
+                                                <td>Rp {{ number_format($item->barang->harga, 2, ',', '.') }}</td>
+                                                <td>{{ $item->jumlah }}</td>
+                                                <td>Rp
+                                                    {{ number_format($item->barang->harga * $item->jumlah, 2, ',', '.') }}
+                                                </td>
+                                                <input type="hidden" name="barang_id[]" value="{{ $item->id_barang }}">
+                                                <input type="hidden" name="jumlah[]" value="{{ $item->jumlah }}">
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="3" class="text-end">Total Keseluruhan:</th>
+                                            <th>Rp
+                                                {{ number_format($keranjangItems->sum(function ($item) {return $item->barang->harga * $item->jumlah;}),2,',','.') }}
+                                            </th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-lg w-50 shadow-sm text-white"
+                                    style="background: linear-gradient(135deg, #6a11cb, #2575fc);">Lanjutkan
+                                    Pembelian</button>
+                            </div>
+                        </form>
+                    @endif
                 </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-lg w-50 shadow-sm">Lanjutkan Pembelian</button>
-                </div>
-            </form>
-        @endif
+            </div>
+        </div>
     </div>
+
 @endsection
 
 <style>
