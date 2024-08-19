@@ -8,8 +8,7 @@ use Illuminate\Validation\Rules;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
-new #[Layout('templates.app.layouts.app')] class extends Component
-{
+new #[Layout('templates.app.layouts.app')] class extends Component {
     public string $username = '';
     public string $name = '';
     public string $email = '';
@@ -44,80 +43,110 @@ new #[Layout('templates.app.layouts.app')] class extends Component
 
         $this->redirect('/home', navigate: true);
     }
-}
+};
 ?>
 
 <div>
-    <form wire:submit="register">
-        <!-- Username -->
-        <div>
-            <x-input-label for="username" :value="__('Username')" />
-            <x-text-input wire:model="username" id="username" class="block mt-1 w-full" type="text" name="username" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('username')" class="mt-2" />
-        </div>
+    <div class="container d-flex align-items-center justify-content-center min-vh-100 my-5">
+        <div class="card shadow-sm p-4" style="max-width: 100%; max-width: 500px;">
+            <img src="{{ asset('assets/img/vector-login-3.png') }}" alt="Login Illustration"
+                class="img-fluid mx-auto d-block" style="max-width: 60%; height: auto;">
+            <div class="card-body">
+                <h4 class="card-title mb-4 text-center">Register</h4>
+                <form wire:submit.prevent="register">
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">{{ __('Username') }}</label>
+                        <input wire:model="username" id="username" class="form-control" type="text" name="username"
+                            required autofocus autocomplete="username">
+                        @error('username')
+                            <div class="text-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-        <!-- Name -->
-        <div class="mt-4">
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input wire:model="name" id="name" class="block mt-1 w-full" type="text" name="name" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+                    <!-- Name -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">{{ __('Name') }}</label>
+                        <input wire:model="name" id="name" class="form-control" type="text" name="name"
+                            required autofocus autocomplete="name">
+                        @error('name')
+                            <div class="text-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input wire:model="email" id="email" class="block mt-1 w-full" type="email" name="email" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+                    <!-- Email Address -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">{{ __('Email') }}</label>
+                        <input wire:model="email" id="email" class="form-control" type="email" name="email"
+                            required autocomplete="username">
+                        @error('email')
+                            <div class="text-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-            <x-text-input wire:model="password" id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">{{ __('Password') }}</label>
+                        <input wire:model="password" id="password" class="form-control" type="password" name="password"
+                            required autocomplete="new-password">
+                        @error('password')
+                            <div class="text-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-            <x-text-input wire:model="password_confirmation" id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+                    <!-- Confirm Password -->
+                    <div class="mb-3">
+                        <label for="password_confirmation" class="form-label">{{ __('Confirm Password') }}</label>
+                        <input wire:model="password_confirmation" id="password_confirmation" class="form-control"
+                            type="password" name="password_confirmation" required autocomplete="new-password">
+                        @error('password_confirmation')
+                            <div class="text-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-        <!-- Alamat -->
-        <div class="mt-4">
-            <x-input-label for="alamat" :value="__('Alamat')" />
-            <x-text-input wire:model="alamat" id="alamat" class="block mt-1 w-full" type="text" name="alamat" />
-            <x-input-error :messages="$errors->get('alamat')" class="mt-2" />
-        </div>
+                    <!-- Alamat -->
+                    <div class="mb-3">
+                        <label for="alamat" class="form-label">{{ __('Alamat') }}</label>
+                        <input wire:model="alamat" id="alamat" class="form-control" type="text" name="alamat">
+                        @error('alamat')
+                            <div class="text-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-        <!-- Jenis Kelamin -->
-        <div class="mt-4">
-            <x-input-label for="jenis_kelamin" :value="__('Jenis Kelamin')" />
-            <select wire:model="jenis_kelamin" id="jenis_kelamin" class="block mt-1 w-full" name="jenis_kelamin">
-                <option value="">Pilih Jenis Kelamin</option>
-                <option value="Pria">Pria</option>
-                <option value="Wanita">Wanita</option>
-            </select>
-            <x-input-error :messages="$errors->get('jenis_kelamin')" class="mt-2" />
-        </div>
+                    <!-- Jenis Kelamin -->
+                    <div class="mb-3">
+                        <label for="jenis_kelamin" class="form-label">{{ __('Jenis Kelamin') }}</label>
+                        <select wire:model="jenis_kelamin" id="jenis_kelamin" class="form-select" name="jenis_kelamin">
+                            <option value="">Pilih Jenis Kelamin</option>
+                            <option value="Pria">Pria</option>
+                            <option value="Wanita">Wanita</option>
+                        </select>
+                        @error('jenis_kelamin')
+                            <div class="text-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-        <!-- Nomor HP -->
-        <div class="mt-4">
-            <x-input-label for="nomor_hp" :value="__('Nomor HP')" />
-            <x-text-input wire:model="nomor_hp" id="nomor_hp" class="block mt-1 w-full" type="text" name="nomor_hp" />
-            <x-input-error :messages="$errors->get('nomor_hp')" class="mt-2" />
-        </div>
+                    <!-- Nomor HP -->
+                    <div class="mb-3">
+                        <label for="nomor_hp" class="form-label">{{ __('Nomor HP') }}</label>
+                        <input wire:model="nomor_hp" id="nomor_hp" class="form-control" type="text" name="nomor_hp">
+                        @error('nomor_hp')
+                            <div class="text-danger mt-2">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}" wire:navigate>
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
+                    <div class="d-flex justify-content-end mt-4">
+                        <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none me-4"
+                            href="{{ route('login') }}" wire:navigate>
+                            {{ __('Already registered?') }}
+                        </a>
+                        <button type="submit" class="btn btn-info">
+                            {{ __('Register') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </form>
+    </div>
+
 </div>
-

@@ -1,25 +1,16 @@
 <nav class="navbar-nav ml-auto">
     @auth
         <li class="nav-item">
-            <a href="{{ url('/dashboard') }}"
-                class="nav-link text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                Dashboard
-            </a>
+            <a href="{{ url('/dashboard') }}" class="btn btn-outline-light">Dashboard</a>
         </li>
     @else
-        <li class="nav-item">
-            <a href="{{ route('login') }}"
-                class="nav-link text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                Log in
-            </a>
+        <li class="nav-item me-3">
+            <a href="{{ route('login') }}" class="btn btn-outline-light">Log in</a>
         </li>
 
         @if (Route::has('register'))
             <li class="nav-item">
-                <a href="{{ route('register') }}"
-                    class="nav-link text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                    Register
-                </a>
+                <a href="{{ route('register') }}" class="btn btn-outline-light">Register</a>
             </li>
         @endif
     @endauth
