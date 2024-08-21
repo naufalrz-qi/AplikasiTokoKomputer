@@ -21,22 +21,24 @@
                         <tbody>
                             @foreach ($pembelians as $key => $pembelian)
                                 <tr>
-                                    <td>{{ $key+1 }}</td>
+                                    <td>{{ $key + 1 }}</td>
                                     <td>{{ $pembelian->id_beli }}</td>
                                     <td>{{ $pembelian->tanggal }}</td>
                                     <td>Rp{{ number_format($pembelian->total_harga_barang, 0, ',', '.') }}</td>
                                     <td>{{ $pembelian->status }}</td>
                                     <td>
-                                        <button class="btn btn-info btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#detail-{{ $pembelian->id_beli }}">
+                                        <button class="btn btn-info btn-sm" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#detail-{{ $pembelian->id_beli }}">
                                             Lihat Detail
                                         </button>
                                     </td>
                                     <td>
 
-                                            <a href="{{ route('pembelian.show', $pembelian->id_beli) }}" class="btn text-white"
-                                                style="background: linear-gradient(135deg, #6a11cb, #2575fc);">
-                                                Lihat Resi
-                                            </a>
+                                        <a href="{{ route('pembelian.show', $pembelian->id_beli) }}"
+                                            class="btn text-white btn-sm"
+                                            style="background: linear-gradient(135deg, #6a11cb, #2575fc);">
+                                            Lihat Resi
+                                        </a>
 
                                     </td>
                                 </tr>
@@ -57,10 +59,11 @@
                                                     <tbody>
                                                         @foreach ($pembelian->details as $detailKey => $detail)
                                                             <tr>
-                                                                <td>{{ $detailKey+1 }}</td>
+                                                                <td>{{ $detailKey + 1 }}</td>
                                                                 <td>{{ $detail->barang->nama_barang }}</td>
                                                                 <td>{{ $detail->jumlah }}</td>
-                                                                <td>Rp{{ number_format($detail->subtotal, 0, ',', '.') }}</td>
+                                                                <td>Rp{{ number_format($detail->subtotal, 0, ',', '.') }}
+                                                                </td>
                                                             </tr>
                                                         @endforeach
                                                     </tbody>

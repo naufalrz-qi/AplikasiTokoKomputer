@@ -9,7 +9,7 @@
         <i class="fas fa-box-open me-2"></i> Kelola Barang
     </a>
     <a href="{{ route('admin.pembelian.index') }}" class="d-flex align-items-center my-2">
-        <i class="fas fa-box-open me-2"></i> Daftar Transaksi
+        <i class="fas fa-receipt me-2"></i> Daftar Transaksi
     </a>
     {{-- <a href="{{ route('pembelian.index') }}" class="d-flex align-items-center my-2 text-dark">
             <i class="fas fa-shopping-cart me-2"></i> Kelola Pembelian
