@@ -65,22 +65,16 @@
             <div class="carousel-item active carousel-img">
                 <img src="{{ asset('assets/img/pexels-1.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
-                    <h5>Slide 1</h5>
-                    <p>Deskripsi untuk slide 1.</p>
                 </div>
             </div>
             <div class="carousel-item carousel-img">
                 <img src="{{ asset('assets/img/pexels-2.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
-                    <h5>Slide 2</h5>
-                    <p>Deskripsi untuk slide 2.</p>
                 </div>
             </div>
             <div class="carousel-item carousel-img">
                 <img src="{{ asset('assets/img/pexels-3.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
-                    <h5>Slide 3</h5>
-                    <p>Deskripsi untuk slide 3.</p>
                 </div>
             </div>
         </div>

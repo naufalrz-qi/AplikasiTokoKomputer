@@ -2,6 +2,9 @@
     <a href="{{ route('admin.dashboard') }}" class="d-flex align-items-center my-2">
         <i class="fas fa-tachometer-alt me-2"></i> Dashboard
     </a>
+    <a href="{{ route('admin.users.index') }}" class="d-flex align-items-center my-2">
+        <i class="fas fa-users-cog me-2"></i> Kelola Pengguna
+    </a>
     <a href="{{ route('kategori.index') }}" class="d-flex align-items-center my-2">
         <i class="fas fa-tags me-2"></i> Kelola Kategori
     </a>
@@ -13,9 +16,6 @@
     </a>
     {{-- <a href="{{ route('pembelian.index') }}" class="d-flex align-items-center my-2 text-dark">
             <i class="fas fa-shopping-cart me-2"></i> Kelola Pembelian
-        </a> --}}
-    {{-- <a href="{{ route('admin.users.index') }}" class="d-flex align-items-center my-2 text-dark">
-            <i class="fas fa-users-cog me-2"></i> Kelola Pengguna
         </a> --}}
     {{-- <a href="#" class="d-flex align-items-center my-2 btn-none"> --}}
     @livewire('logout-button')

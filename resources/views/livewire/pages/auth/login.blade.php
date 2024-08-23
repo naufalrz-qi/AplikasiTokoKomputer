@@ -99,6 +99,4 @@ new #[Layout('templates.app.layouts.app')] class extends Component {
                 </div>
             </div>
 
-
-
         </div>

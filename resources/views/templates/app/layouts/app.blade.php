@@ -15,8 +15,16 @@
     @include('templates.app.layouts.navbar')
 
     <main>
-        @yield('content')
-        {{ $slot }}
+        @if (isset($slot) && trim($slot) !== '')
+            <!-- Jika slot ada dan tidak kosong, tampilkan konten dari slot -->
+            {{ $slot }}
+        @elseif(View::hasSection('content'))
+            <!-- Jika slot tidak ada, cek apakah section 'content' ada -->
+            @yield('content')
+        @else
+            <!-- Jika tidak ada slot dan tidak ada section 'content', tampilkan konten default -->
+            <p>Konten default atau pesan error di sini.</p>
+        @endif
     </main>
 
     @include('templates.app.layouts.footer')

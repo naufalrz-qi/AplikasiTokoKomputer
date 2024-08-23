@@ -18,6 +18,39 @@ class BarangController extends Controller
         return view('templates.admin.barang.index', compact('barangs'));
     }
 
+    //Filtering
+    public function indexUser(Request $request)
+    {
+        $kategoriId = $request->input('kategori');
+
+        if ($kategoriId) {
+            $barangs = Barang::where('kategori_id', $kategoriId)->get();
+        } else {
+            $barangs = Barang::all();
+        }
+
+        $kategoris = Kategori::all();
+
+        return view('templates.user.kategori.index', compact('barangs', 'kategoris'));
+    }
+
+    //Filtering
+    public function indexGuest(Request $request)
+    {
+        $kategoriId = $request->input('kategori');
+
+        if ($kategoriId) {
+            $barangs = Barang::where('kategori_id', $kategoriId)->get();
+        } else {
+            $barangs = Barang::all();
+        }
+
+        $kategoris = Kategori::all();
+
+        return view('templates.guest.kategori.index', compact('barangs', 'kategoris'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */

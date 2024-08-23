@@ -10,22 +10,16 @@
             <div class="carousel-item active carousel-img">
                 <img src="{{ asset('assets/img/pexels-1.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
-                    <h5>Slide 1</h5>
-                    <p>Deskripsi untuk slide 1.</p>
                 </div>
             </div>
             <div class="carousel-item carousel-img">
                 <img src="{{ asset('assets/img/pexels-2.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
-                    <h5>Slide 2</h5>
-                    <p>Deskripsi untuk slide 2.</p>
                 </div>
             </div>
             <div class="carousel-item carousel-img">
                 <img src="{{ asset('assets/img/pexels-3.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
-                    <h5>Slide 3</h5>
-                    <p>Deskripsi untuk slide 3.</p>
                 </div>
             </div>
         </div>
@@ -38,6 +32,85 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+
+    <main>
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Mitra Computer: Pilihan Terbaik untuk Solusi Komputer Anda</h2>
+                <p class="lead text-center">Mitra Computer adalah toko komputer terkemuka yang menyediakan berbagai
+                    kebutuhan teknologi dengan kualitas terbaik dan harga terjangkau.</p>
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <h3>Produk Unggulan</h3>
+                        <p>Kami menawarkan berbagai produk komputer mulai dari laptop, desktop, komponen PC, hingga
+                            aksesoris terbaru. Semua produk kami dipilih dengan cermat untuk memastikan kualitas dan
+                            performa terbaik bagi pelanggan.</p>
+                        <ul>
+                            <li>Laptop terbaru dengan prosesor canggih</li>
+                            <li>Desktop PC yang dapat di-customize sesuai kebutuhan</li>
+                            <li>Komponen PC dari merek-merek ternama</li>
+                            <li>Aksesoris komputer seperti mouse, keyboard, dan monitor</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{ asset('assets/img/pexels-3.jpg') }}" class="img-fluid rounded shadow"
+                            alt="Mitra Computer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-light py-5">
+            <div class="container">
+                <h3 class="text-center mb-4">Layanan Profesional</h3>
+                <p class="lead text-center">Mitra Computer tidak hanya menyediakan produk berkualitas, tetapi juga
+                    layanan profesional yang membantu Anda merawat dan mengoptimalkan perangkat teknologi Anda.</p>
+                <div class="row mt-5">
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+                        <h4>Perbaikan dan Pemeliharaan</h4>
+                        <p>Kami menyediakan layanan perbaikan dan pemeliharaan untuk semua jenis perangkat komputer,
+                            memastikan perangkat Anda selalu dalam kondisi prima.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-user-shield fa-3x text-primary mb-3"></i>
+                        <h4>Keamanan Data</h4>
+                        <p>Dengan layanan keamanan data kami, Anda dapat melindungi informasi penting dari ancaman
+                            siber. Keamanan data pelanggan adalah prioritas utama kami.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                        <h4>Dukungan Pelanggan</h4>
+                        <p>Tim dukungan pelanggan kami siap membantu Anda dengan segala pertanyaan dan kebutuhan
+                            teknologi Anda. Layanan pelanggan yang ramah dan responsif adalah komitmen kami.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <h3 class="text-center mb-4">Temukan Produk Terbaik Hanya di MTC Mitra Computer</h3>
+                <p class="text-center">MTC Mitra Computer selalu menghadirkan produk-produk teknologi terbaik yang
+                    sesuai dengan kebutuhan Anda. Kami menawarkan berbagai pilihan laptop, desktop, dan aksesoris
+                    komputer dari merek-merek ternama dengan kualitas yang terjamin. Setiap produk dipilih dengan cermat
+                    untuk memberikan performa maksimal dan daya tahan yang luar biasa.</p>
+                <p class="text-center">Baik Anda seorang profesional yang membutuhkan perangkat untuk kerja, seorang
+                    gamer yang mencari PC dengan performa tinggi, atau seorang pelajar yang memerlukan laptop untuk
+                    belajar, kami memiliki produk yang tepat untuk Anda. Selain itu, tim kami siap memberikan
+                    rekomendasi terbaik sesuai kebutuhan dan anggaran Anda.</p>
+                <p class="text-center">Jangan lewatkan kesempatan untuk mendapatkan produk dengan kualitas terbaik dan
+                    harga kompetitif hanya di MTC Mitra Computer. Kami juga menyediakan berbagai penawaran khusus dan
+                    diskon untuk pelanggan setia.</p>
+                <div class="text-center mt-4">
+                    <a href="{{ route('login') }}" class="btn btn-primary btn-lg"
+                        style="background: linear-gradient(135deg, #6a11cb, #2575fc);">Belanja Sekarang</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
 
     <style>
         /* Default height for larger screens */

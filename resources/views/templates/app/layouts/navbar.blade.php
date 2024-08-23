@@ -12,13 +12,10 @@
                         <a class="nav-link active" aria-current="page" href="/#">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('guest.kategori.index') }}">Barang</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Barang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kategori</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact Us</a>

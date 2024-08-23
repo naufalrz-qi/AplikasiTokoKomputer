@@ -12,6 +12,10 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('user.home') }}">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="{{ route('user.kategori.index') }}">Kategori</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('keranjang.index') }}">Keranjang</a>
                     </li>
                     <li class="nav-item">
