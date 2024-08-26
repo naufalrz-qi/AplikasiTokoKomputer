@@ -5,11 +5,14 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 Route::get('/kategori/guest', [BarangController::class, 'indexGuest'])->name('guest.kategori.index');
+Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
+Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
 
 Route::middleware('auth')->group(function () {
     Route::middleware(['role:user'])->group(function () {
@@ -37,6 +40,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/payment/{pembelianId}', [PembelianController::class, 'paymentIndex'])->name('payment.index');
         Route::post('/payment/callback', [PembelianController::class, 'callback'])->name('payment.callback');
 
+        // Tambahkan route untuk UserController
+        Route::get('/user/profile', [UserController::class, 'userProfile'])->name('user.profile.index');
+        Route::get('/user/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit')->middleware('auth');
+        Route::put('/user/profile/update', [UserController::class, 'updateProfile'])->name('profile.update')->middleware('auth');
 
     });
     Route::middleware(['role:admin'])->group(function () {

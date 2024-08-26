@@ -33,7 +33,7 @@
         </button>
     </div>
 
-    <main>
+    <main id="about">
         <section class="py-5">
             <div class="container">
                 <h2 class="text-center mb-4">Mitra Computer: Pilihan Terbaik untuk Solusi Komputer Anda</h2>
@@ -108,8 +108,44 @@
                 </div>
             </div>
         </section>
-
     </main>
+
+    <div class="container mt-5" id="contact">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Contact Us</h2>
+                <p>Need to get in touch with us? Either fill out the form with your inquiry or find the <a
+                        href="#">department email</a> you'd like to contact below.</p>
+            </div>
+            <div class="col-md-6">
+                <form action="{{ route('contact.submit') }}" method="post">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First name*</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email*</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">What can we help you with?</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
     <style>
