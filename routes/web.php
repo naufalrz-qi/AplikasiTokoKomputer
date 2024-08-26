@@ -11,8 +11,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 Route::get('/kategori/guest', [BarangController::class, 'indexGuest'])->name('guest.kategori.index');
-Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
-Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact.submit');
 
 Route::middleware('auth')->group(function () {
     Route::middleware(['role:user'])->group(function () {

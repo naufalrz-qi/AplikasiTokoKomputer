@@ -36,7 +36,7 @@
     <main id="about">
         <section class="py-5">
             <div class="container">
-                <h2 class="text-center mb-4">Mitra Computer: Pilihan Terbaik untuk Solusi Komputer Anda</h2>
+                <h2 class="text-center mb-4">Mitra Computer<br>Pilihan Terbaik untuk Solusi Komputer Anda</h2>
                 <p class="lead text-center">Mitra Computer adalah toko komputer terkemuka yang menyediakan berbagai
                     kebutuhan teknologi dengan kualitas terbaik dan harga terjangkau.</p>
                 <div class="row mt-5">
@@ -110,43 +110,49 @@
         </section>
     </main>
 
-    <div class="container mt-5" id="contact">
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Contact Us</h2>
-                <p>Need to get in touch with us? Either fill out the form with your inquiry or find the <a
-                        href="#">department email</a> you'd like to contact below.</p>
-            </div>
-            <div class="col-md-6">
-                <form action="{{ route('contact.submit') }}" method="post">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="firstName" class="form-label">First name*</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+    <div class="container my-5" id="contact">
+        <div class="card shadow-lg mx-auto col-md-6">
+            <div>
+                <div
+                    style="background-image: url('{{ asset('assets/img/back-again.png') }}'); background-size: 38%; background-repeat: no-repeat; background-position: -50%;">
+                    <div
+                        style="background-image: url('{{ asset('assets/img/back-again-2.png') }}'); background-size: 38%; background-repeat: no-repeat; background-position: 150%;">
+                        <div class="card-body p-5">
+                            <h2 class="card-title text-center mb-4">Contact Us</h2>
+                            <form action="mailto:dudyhartanto@gmail.com" method="post" enctype="text/plain">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nama:</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subjek:</label>
+                                    <input type="text" class="form-control" id="subject" name="subject"
+                                        required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Pesan:</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn text-white px-5"
+                                        style="background: linear-gradient(135deg, #6a11cb, #2575fc);">Kirim</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="lastName" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email*</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">What can we help you with?</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-
 
     <style>
         /* Default height for larger screens */
