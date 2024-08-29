@@ -11,14 +11,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 Route::get('/kategori/guest', [BarangController::class, 'indexGuest'])->name('guest.kategori.index');
+Route::get('/about', function () {
+    return view('about');
+});
 
 Route::middleware('auth')->group(function () {
+    Route::get('/barang/{id}/show', [BarangController::class, 'show'])->name('barang.show');
+
+
     Route::middleware(['role:user'])->group(function () {
         // home
         Route::get('home', [HomeController::class, 'index'])->name('user.home');
 
         // detail barang
-        Route::get('/barang/{id}/show', [BarangController::class, 'show'])->name('barang.show');
 
         // Untuk kategori
         Route::get('/kategori/user', [BarangController::class, 'indexUser'])->name('user.kategori.index');

@@ -69,10 +69,35 @@
         .btn-close {
             filter: invert(100%);
         }
+
+        #myButton {
+            width: 48px;
+            height: 48px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            /* Awalnya disembunyikan */
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            font-size: 18px;
+        }
+
+        #myButton:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
 <body>
+    <button id="myButton" class="floating-button"><i class="fas fa-arrow-up"></i></button>
+
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar (Hidden on small screens) -->
@@ -111,6 +136,31 @@
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+
+            // Saat scroll lebih dari 100px dari atas, tombol akan muncul
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#myButton').fadeIn();
+                } else {
+                    $('#myButton').fadeOut();
+                }
+            });
+
+            // Ketika tombol diklik, halaman akan scroll ke atas secara smooth
+            $('#myButton').click(function() {
+                $('html, body').animate({
+                        scrollTop: 0
+                    }
+
+                    , 50);
+                return false;
+            });
+        });
+    </script>
 </body>
 
 </html>

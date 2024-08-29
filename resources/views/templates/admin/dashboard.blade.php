@@ -16,7 +16,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h4>Total Kategori</h4>
-                            <h2>150</h2>
+                            <h2>{{ $totalKategori }}</h2>
                         </div>
                         <div>
                             <i class="fas fa-tags fa-2x"></i>
@@ -30,7 +30,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h4>Total Barang</h4>
-                            <h2>450</h2>
+                            <h2>{{ $totalBarang }}</h2>
                         </div>
                         <div>
                             <i class="fas fa-box-open fa-2x"></i>
@@ -44,7 +44,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h4>Transaksi Bulan Ini</h4>
-                            <h2>320</h2>
+                            <h2>{{ $jumlahTransaksiBulanIni }}</h2>
                         </div>
                         <div>
                             <i class="fas fa-shopping-cart fa-2x"></i>
@@ -57,8 +57,8 @@
                 <div class="stats-card p-4 bg-danger text-white rounded shadow-sm">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h4>Pendapatan</h4>
-                            <h2>Rp 50 Jt</h2>
+                            <h4>Pendapatan Bulan Ini</h4>
+                            <h2>Rp {{ number_format($totalPendapatanBulanIni, 0, ',', '.') }}</h2>
                         </div>
                         <div>
                             <i class="fas fa-money-bill-wave fa-2x"></i>
@@ -69,62 +69,60 @@
             </div>
         </div>
 
-        <!-- Charts and Recent Activity -->
-        <div class="row mt-4">
-            <!-- Chart Column -->
-            <div class="col-lg-8 col-md-12">
-                <div class="chart-card bg-white p-4 rounded shadow-sm">
-                    <h5 class="mb-4">Statistik Penjualan</h5>
-                    <canvas id="salesChart"></canvas>
+        <div class="container">
+            <!-- Charts and Recent Activity -->
+            <div class="row mt-4">
+                <!-- Chart Column -->
+                <div class="col-lg-8 col-md-12">
+                    <div class="chart-card bg-white p-4 rounded shadow-sm">
+                        <h5 class="mb-4">Statistik Penjualan</h5>
+                        <canvas id="salesChart"></canvas>
+                    </div>
                 </div>
-            </div>
+                <!-- Recent Activity Column -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="recent-activity bg-white p-4 rounded shadow-sm">
+                        <h5 class="mb-4">Aktivitas Terbaru</h5>
+                        <ul class="list-group">
+                            @foreach ($recentActivities as $activity)
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="{{ $activity['icon'] }}"></i> {{ $activity['message'] }}</span>
+                                    <span class="badge {{ $activity['badge'] }}">{{ $activity['time'] }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
 
-            <!-- Recent Activity Column -->
-            <div class="col-lg-4 col-md-12">
-                <div class="recent-activity bg-white p-4 rounded shadow-sm">
-                    <h5 class="mb-4">Aktivitas Terbaru</h5>
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span><i class="fas fa-box"></i> Barang baru ditambahkan</span>
-                            <span class="badge bg-success">2 jam yang lalu</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span><i class="fas fa-shopping-cart"></i> Pembelian berhasil</span>
-                            <span class="badge bg-info">1 hari yang lalu</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span><i class="fas fa-user-plus"></i> Pengguna baru terdaftar</span>
-                            <span class="badge bg-warning">3 hari yang lalu</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Scripts for Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('salesChart').getContext('2d');
-        const salesChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
-                datasets: [{
-                    label: 'Penjualan',
-                    data: [120, 190, 300, 500, 200, 300, 450, 700, 400, 600, 800, 900],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+        <!-- Scripts for Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            // Data penjualan per bulan dari controller
+            const salesData = @json($salesPerMonth);
+
+            const ctx = document.getElementById('salesChart').getContext('2d');
+            const salesChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+                    datasets: [{
+                        label: 'Penjualan',
+                        data: salesData,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
-    </script>
-@endsection
+            });
+        </script>
+    @endsection

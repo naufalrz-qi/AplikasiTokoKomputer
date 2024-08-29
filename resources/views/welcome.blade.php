@@ -1,4 +1,44 @@
 <x-app-layout-app>
+    <style>
+        /* Default height for larger screens */
+        .carousel-img {
+            height: 600px;
+        }
+
+        /* Responsive height for smaller screens */
+        @media (max-width: 1200px) {
+            .carousel-img {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .carousel-img {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .carousel-img {
+                height: 200px;
+            }
+        }
+
+        /* Ensure images cover the entire area */
+        .carousel-img img {
+            object-fit: cover;
+            height: 100%;
+        }
+    </style>
+
+
+
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true"
@@ -56,6 +96,11 @@
                         <img src="{{ asset('assets/img/pexels-3.jpg') }}" class="img-fluid rounded shadow"
                             alt="Mitra Computer">
                     </div>
+
+                </div>
+                <div class="text-center mt-3">
+                    <a href="/about" class="btn text-white px-5"
+                        style="background: linear-gradient(135deg, #6a11cb, #2575fc);">Selengkapnya</a>
                 </div>
             </div>
         </section>
@@ -154,41 +199,5 @@
         </div>
     </div>
 
-    <style>
-        /* Default height for larger screens */
-        .carousel-img {
-            height: 600px;
-        }
 
-        /* Responsive height for smaller screens */
-        @media (max-width: 1200px) {
-            .carousel-img {
-                height: 500px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .carousel-img {
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .carousel-img {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .carousel-img {
-                height: 200px;
-            }
-        }
-
-        /* Ensure images cover the entire area */
-        .carousel-img img {
-            object-fit: cover;
-            height: 100%;
-        }
-    </style>
 </x-app-layout-app>
