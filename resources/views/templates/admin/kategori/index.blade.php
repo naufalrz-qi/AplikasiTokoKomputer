@@ -29,10 +29,6 @@
                                             <td>{{ $kategori->nama_kategori }}</td>
                                             <td>{{ $kategori->deskripsi_kategori }}</td>
                                             <td>
-                                                <a href="{{ route('kategori.show', $kategori->id) }}"
-                                                    class="btn btn-info btn-sm">
-                                                    <i class="fas fa-eye"></i> Lihat
-                                                </a>
                                                 <a href="{{ route('kategori.edit', $kategori->id) }}"
                                                     class="btn btn-warning btn-sm">
                                                     <i class="fas fa-edit"></i> Edit
