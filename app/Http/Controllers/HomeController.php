@@ -63,7 +63,7 @@ class HomeController extends Controller
                 return [
                     'type' => 'barang',
                     'message' => 'Barang baru ditambahkan: ' . $item->nama_barang,
-                    'time' => $item->created_at->diffForHumans(),
+                    'time' => $item->created_at ? $item->created_at->diffForHumans() : 'N/A',
                     'icon' => 'fas fa-box',
                     'badge' => 'bg-success'
                 ];
@@ -77,7 +77,7 @@ class HomeController extends Controller
                 return [
                     'type' => 'pembelian',
                     'message' => 'Pembelian berhasil dengan ID: ' . $item->id_beli,
-                    'time' => $item->created_at->diffForHumans(),
+                    'time' => $item->created_at ? $item->created_at->diffForHumans() : 'N/A',
                     'icon' => 'fas fa-shopping-cart',
                     'badge' => 'bg-info'
                 ];
@@ -91,7 +91,8 @@ class HomeController extends Controller
                 return [
                     'type' => 'user',
                     'message' => 'Pengguna baru terdaftar: ' . $item->name,
-                    'time' => $item->created_at->diffForHumans(),
+                    'time' => $item->created_at ? $item->created_at->diffForHumans() : 'N/A',
+
                     'icon' => 'fas fa-user-plus',
                     'badge' => 'bg-warning'
                 ];
