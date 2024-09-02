@@ -74,7 +74,7 @@
 </head>
 
 <body>
-<button id="myButton" class="floating-button"><i class="fas fa-arrow-up"></i></button>
+    <button id="myButton" class="floating-button"><i class="fas fa-arrow-up"></i></button>
 
 
     @include('templates.user.layouts.navbar')
@@ -88,17 +88,17 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active carousel-img">
-                <img src="{{ asset('assets/img/pexels-1.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('assets/img/pc-1.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="carousel-item carousel-img">
-                <img src="{{ asset('assets/img/pexels-2.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('assets/img/pc-2.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="carousel-item carousel-img">
-                <img src="{{ asset('assets/img/pexels-3.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('assets/img/pc-3.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                 </div>
             </div>
@@ -123,30 +123,30 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function() {
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
 
-        // Saat scroll lebih dari 100px dari atas, tombol akan muncul
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 100) {
-                $('#myButton').fadeIn();
-            } else {
-                $('#myButton').fadeOut();
-            }
-        });
-
-        // Ketika tombol diklik, halaman akan scroll ke atas secara smooth
-        $('#myButton').click(function() {
-            $('html, body').animate({
-                    scrollTop: 0
+            // Saat scroll lebih dari 100px dari atas, tombol akan muncul
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#myButton').fadeIn();
+                } else {
+                    $('#myButton').fadeOut();
                 }
+            });
 
-                , 50);
-            return false;
+            // Ketika tombol diklik, halaman akan scroll ke atas secara smooth
+            $('#myButton').click(function() {
+                $('html, body').animate({
+                        scrollTop: 0
+                    }
+
+                    , 50);
+                return false;
+            });
         });
-    });
-</script>
+    </script>
 </body>
 
 </html>

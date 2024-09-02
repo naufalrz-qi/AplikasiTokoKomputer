@@ -18,8 +18,7 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ asset('assets/img/pexels-3.jpg') }}" class="img-fluid rounded shadow"
-                        alt="Mitra Computer">
+                    <img src="{{ asset('assets/img/pc-1.jpg') }}" class="img-fluid rounded shadow" alt="Mitra Computer">
                 </div>
 
             </div>

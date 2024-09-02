@@ -48,17 +48,17 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active carousel-img">
-                <img src="{{ asset('assets/img/pexels-1.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('assets/img/pc-1.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="carousel-item carousel-img">
-                <img src="{{ asset('assets/img/pexels-2.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('assets/img/pc-2.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="carousel-item carousel-img">
-                <img src="{{ asset('assets/img/pexels-3.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('assets/img/pc-3.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption">
                 </div>
             </div>
@@ -93,7 +93,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <img src="{{ asset('assets/img/pexels-3.jpg') }}" class="img-fluid rounded shadow"
+                        <img src="{{ asset('assets/img/pc-1.jpg') }}" class="img-fluid rounded shadow"
                             alt="Mitra Computer">
                     </div>
 
