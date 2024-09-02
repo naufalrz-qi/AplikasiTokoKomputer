@@ -86,11 +86,10 @@
                             aksesoris terbaru. Semua produk kami dipilih dengan cermat untuk memastikan kualitas dan
                             performa terbaik bagi pelanggan.</p>
                         <ul>
-                            <li>LENOVO IP3 14ABA7 AMD R7-5825/8GB/512/14 FHD/WIN 11 HOME SL Rp.8,750,000</li>
-                            <li>ADVAN SOULMATE N4020/4GB/128GB/W11/14 BK Rp. 2,800,000</li>
-                            <li>ASUS A1400KA-FHD422 CEL N4500/4GB/256/WIN 11 HOME OHS 2021 Rp. 4,925,000</li>
-                            <li>LENOVO V14 G3 IAP I3-1215U/8GB/512/14 FHD/DOS Rp. 5,850,000</li>
-                            <li>PRINTER BROTHER DCP-T220 Rp. 2,100,000</li>
+                            <li>LENOVO V14 G3 IAP I3-1215U/8GB/512/14 FHD/DOS</li>
+                            <li>LENOVO IP3 14IAUT 13-1215U/8GB/256/WIN11 HOME OHS 2021</li>
+                            <li>NB ASUS E1404GA-FHD326 I3-N305/8GB/256/WIN11+OHS/14 FHD/SLV</li>
+                            <li>LENOVO V14-G3-IAP I3-1215U/4GB/512/DOS/14 FHD</li>
                         </ul>
                     </div>
                     <div class="col-md-6 text-md-center">
