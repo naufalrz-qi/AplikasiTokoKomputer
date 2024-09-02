@@ -11,14 +11,15 @@
                         aksesoris terbaru. Semua produk kami dipilih dengan cermat untuk memastikan kualitas dan
                         performa terbaik bagi pelanggan.</p>
                     <ul>
-                        <li>Laptop terbaru dengan prosesor canggih</li>
-                        <li>Desktop PC yang dapat di-customize sesuai kebutuhan</li>
-                        <li>Komponen PC dari merek-merek ternama</li>
-                        <li>Aksesoris komputer seperti mouse, keyboard, dan monitor</li>
+                        <li>LENOVO IP3 14ABA7 AMD R7-5825/8GB/512/14 FHD/WIN 11 HOME SL Rp.8,750,000</li>
+                        <li>ADVAN SOULMATE N4020/4GB/128GB/W11/14 BK Rp. 2,800,000</li>
+                        <li>ASUS A1400KA-FHD422 CEL N4500/4GB/256/WIN 11 HOME OHS 2021 Rp. 4,925,000</li>
+                        <li>LENOVO V14 G3 IAP I3-1215U/8GB/512/14 FHD/DOS Rp. 5,850,000</li>
+                        <li>PRINTER BROTHER DCP-T220 Rp. 2,100,000</li>
                     </ul>
                 </div>
-                <div class="col-md-6">
-                    <img src="{{ asset('assets/img/pc-1.jpg') }}" class="img-fluid rounded shadow" alt="Mitra Computer">
+                <div class="col-md-6 text-md-center">
+                    <img src="{{ asset('assets/img/asus.jpg') }}" class="img-fluid rounded shadow" alt="Mitra Computer">
                 </div>
 
             </div>
