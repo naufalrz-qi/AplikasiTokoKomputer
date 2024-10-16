@@ -2,7 +2,7 @@
     <style>
         /* Default height for larger screens */
         .carousel-img {
-            height: 300px;
+            height: 400px;
         }
 
         /* Responsive height for smaller screens */
